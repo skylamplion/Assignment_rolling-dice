@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                *{
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+        }
+        .button{
+            text-align:center;
+            margin: 30px 400px 40px 400px;
+            padding: 0px;
+            border: 2px solid black;
+        }
+
+        .dice{
+            border: none;
+            padding: 0px;
+            font-size:300px;
+            background-color: white;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+    <h2>click on the dice...</h2>
+    <button class="dice" id="random"><!-- ⚀ ⚁ ⚂ ⚃ ⚄ ⚅ --></button>
+</div>
+    <script>
+        //creating randomly generated dice face
+         const dicegame = function() {
+    const dice=[{face:"⚀",},{face:"⚁"},{face:"⚂"},{face:"⚃"},{face:"⚄"},{face:"⚅"}]; //faces of dice
+
+    var arrIdx = Math.floor(Math.random() * dice.length); //randomize the dice using math.rondom 
+    document.getElementById("random").innerHTML = dice[arrIdx].face; // attach random dice face in button tag
+         }
+window.onload = function() {
+    dicegame();
+    document.getElementById("random").addEventListener('click', dicegame);
+}
+    </script>
+</body>
+</html>
